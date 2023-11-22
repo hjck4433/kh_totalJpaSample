@@ -13,7 +13,11 @@ import java.time.LocalDateTime;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // AUTO => 스프링부트에서 생성전략 관여(유리) / IDENTITY => DB에 있는 생성전략
+    @Column(name ="member_id")
     private Long id; // 생성하는게 관례
+
+    private String userId;
+
     @Column(nullable = false) // NULL을 허용하지 않음
     private String name;
     private String password;
